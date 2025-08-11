@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Galeria 360º</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Minha Galeria de Imagens 360º</h1>
+    <p>Clique em uma imagem para ver em 360 graus.</p>
+
+    <div id="galeria">
+        <div class="miniatura" onclick="abrirVisualizador('imagens/festatelemaco.jpg')">
+            <img src="imagens/festatelemaco.jpg" alt="Festa Agostina 09.08.25">
+            <span>Vista 360º Sobre a festa Agostina 09.08.2025</span>
+        </div>
+        <div class="miniatura" onclick="abrirVisualizador('imagens/festatelemaco2.jpg')">
+            <img src="imagens/festatelemaco2.jpg" alt="Festa Agostina 09.08.25">
+            <span>Vista 360º Sobre a festa Agostina 09.08.2025</span>
+        </div>
+        <div class="miniatura" onclick="abrirVisualizador('imagens/Panorama - AniversárioJoaquim360.jpg')">
+            <img src="imagens/Panorama - AniversárioJoaquim360.jpg" alt="Aniversário Joaquim">
+            <span>Aniversário do Joaquim</span>
+        </div>
+        <div class="miniatura" onclick="abrirVisualizador('imagens/Panorama2 - AniversárioJoaquim360.jpg')">
+            <img src="imagens/Panorama2 - AniversárioJoaquim360.jpg" alt="Aniversário Joaquim">
+            <span>Aniversário do Joaquim foto 2</span>
+        </div>
+        <div class="miniatura" onclick="abrirVisualizador('imagens/Panorama casa 360.jpg')">
+            <img src="imagens/Panorama casa 360.jpg" alt="Panorama Casa Telemaco">
+            <span>Panorama Telêmaco Borba</span>
+        </div>
+        </div>
+
+    <div id="visualizador-container">
+        <div id="panorama"></div>
+        <button id="fechar-btn" onclick="fecharVisualizador()">X</button>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        let viewer; // Variável para guardar a instância do Pannellum
+
+        function abrirVisualizador(caminhoDaImagem) {
+            // Mostra o container do visualizador e esconde a galeria
+            document.getElementById('visualizador-container').style.display = 'block';
+            document.getElementById('galeria').style.display = 'none';
+
+            // Inicia o Pannellum
+            viewer = pannellum.viewer('panorama', {
+                "type": "equirectangular",
+                "panorama": caminhoDaImagem,
+                "autoLoad": true,
+                "showZoomCtrl": true, // Mostra controle de zoom
+                "mouseZoom": false // Desativa zoom com o scroll do mouse
+            });
+        }
+
+        function fecharVisualizador() {
+            // Esconde o container do visualizador e mostra a galeria novamente
+            document.getElementById('visualizador-container').style.display = 'none';
+            document.getElementById('galeria').style.display = 'flex';
+
+            // IMPORTANTE: Destrói a instância anterior para liberar memória
+            if (viewer) {
+                viewer.destroy();
+            }
+        }
+    </script>
+</body>
+</html>
