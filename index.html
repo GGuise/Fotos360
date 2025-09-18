@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Galeria 360º</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <h1>Minha Galeria de Imagens 360º</h1>
@@ -33,7 +35,39 @@
             <img src="imagens/Panorama casa 360.jpg" alt="Panorama Casa Telemaco">
             <span>Panorama Telêmaco Borba</span>
         </div>
+
+
+        <div class="miniatura" onclick="abrirVisualizador('imagens/Padrinhos-14-09-25.jpeg')">
+            <img src="imagens/Padrinhos-14-09-25.jpeg" alt="Padrinhos de Telemaco">
+            <span>Padrinhos de Telêmaco Borba - 14/09/25</span>
         </div>
+
+        <div class="miniatura" onclick="abrirVisualizador('imagens/shoppingPalladium.jpeg')">
+            <img src="imagens/shoppingPalladium.jpeg" alt="Shopping Palladium - Curitiba">
+            <span>Shopping Palladium - Curitiba</span>
+        </div>
+
+        <div class="miniatura" onclick="abrirVisualizador('imagens/santaFe1.jpeg')">
+            <img src="imagens/santaFe1.jpeg" alt="Santa Fe - 1">
+            <span>Santa Fe - 1</span>
+        </div>
+
+        <div class="miniatura" onclick="abrirVisualizador('imagens/SantaFe2.jpeg')">
+            <img src="imagens/SantaFe2.jpeg" alt="Santa Fe - 2">
+            <span>Santa Fe - 2</span>
+        </div>
+        <div class="miniatura" onclick="abrirVisualizador('imagens/SantaFe3.jpeg')">
+            <img src="imagens/SantaFe3.jpeg" alt="Santa Fe - 3">
+            <span>Santa Fe - 3</span>
+        </div>
+        <div class="miniatura" onclick="abrirVisualizador('imagens/SantaFe4.jpeg')">
+            <img src="imagens/SantaFe4.jpeg" alt="Santa Fe - 4">
+            <span>Santa Fe - 4</span>
+        </div>
+
+
+
+    </div>
 
     <div id="visualizador-container">
         <div id="panorama"></div>
@@ -71,4 +105,5 @@
         }
     </script>
 </body>
+
 </html>
